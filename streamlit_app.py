@@ -58,7 +58,7 @@ if active_tab not in tabs:
 li_items = "".join(
     f"""
     <li class="nav-item">
-        <a class="nav-link{' active' if t==active_tab else ''}" href="/?tab={t}">{t}</a>
+        <a class="nav-link{' active' if t==active_tab else ''}" href="https://share.streamlit.io/qisuqi/fornite_stats/main/?tab={t}">{t}</a>
     </li>
     """
     for t in tabs
