@@ -2,13 +2,7 @@ from faunadb import query as q
 from faunadb.objects import Ref
 from faunadb.client import FaunaClient
 import streamlit as st
-import streamlit.components.v1 as components
 import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_agg import RendererAgg
-from matplotlib.figure import Figure
-import seaborn as sns
-
 
 FAUNADB_KEY = 'fnAEHlKQR0ACBUKHgCbLTCM4OXjwuBCUCAnGAt-h'
 client = FaunaClient(secret=FAUNADB_KEY)
