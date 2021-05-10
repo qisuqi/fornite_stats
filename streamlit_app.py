@@ -4,7 +4,7 @@ from faunadb.client import FaunaClient
 import streamlit as st
 import pandas as pd
 
-FAUNADB_KEY = st.secret['FAUNADB_KEY']
+FAUNADB_KEY = st.secrets['FAUNADB_KEY']
 client = FaunaClient(secret=FAUNADB_KEY)
 
 
