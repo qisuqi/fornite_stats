@@ -37,6 +37,14 @@ weapon_name_list = all_products['Weapon Name'].unique()
 weapon_color_list = all_products['Weapon Color'].unique()
 weapon_type_list = all_products['Weapon Type'].unique()
 
+most_weapon_name = all_products['Weapon Name'].value_counts().idxmax()
+location = all_products[all_products['Location'] != 'NP']
+location1 = location[location['Got Out'] == 'No']
+most_location = location1['Location'].value_counts()[:1].index.tolist()
+most_location1 = str(most_location).strip("'[]'")
+info1 = "The most deadly weapon name is " + most_weapon_name
+info2 = 'The most deadly location is ' + most_location1
+
 st.markdown(
     '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">',
     unsafe_allow_html=True,
@@ -75,6 +83,13 @@ if active_tab == 'Home':
     output_graphs = st.beta_container()
 
     with output_graphs:
+        
+        card1, card2 = st.beta_columns(2)
+        
+        with card1:
+            st.info(info1)
+        with card2:
+            st.info(info2)
 
         col1, col2, col3 = st.beta_columns(3)
 
